@@ -26,7 +26,7 @@ export default function Home() {
             variant="contained"
             component={Link}
             noLinkStyle
-            href="/questionare"
+            href="/questions"
           >
             Begin questionaire
           </Button>
