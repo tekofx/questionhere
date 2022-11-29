@@ -3,13 +3,18 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Link from '../src/Link';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
-
+import Questions from "../data/questions.json";
 import { useState } from 'react';
+import Question from '../components/Question';
 
 export default function About() {
+  const [question, setQuestion] = useState(0);
+
+
+  function nextQuestion() {
+    setQuestion(question + 1);
+  }
+
   return (
     <Container maxWidth="lg">
       <Box
@@ -21,16 +26,8 @@ export default function About() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Box maxWidth="sm">
-          <Button variant="contained" component={Link} noLinkStyle href="/">
-            Go to the home page
-          </Button>
-        </Box>
-        <ProTip />
-        <Copyright />
+       
+        <Question question={Questions[question].question} answers={Questions[question].answers}/>
       </Box>
     </Container>
   );

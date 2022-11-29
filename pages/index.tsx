@@ -4,8 +4,6 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Link from '../src/Link';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
 
 export default function Home() {
   return (
@@ -23,12 +21,10 @@ export default function Home() {
           Question Here!
         </Typography>
         <Box maxWidth="sm">
-          <Button variant="contained" component={Link} noLinkStyle href="/about">
+          <Button variant="contained" component={Link} noLinkStyle href="/questionare">
             Begin questionaire
           </Button>
         </Box>
-        <ProTip />
-        <Copyright />
       </Box>
     </Container>
   );

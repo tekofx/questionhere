@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "question": "How are you feling today",
+        "answers": [
+            {
+                "text": "good",
+                "value": 1
+            },
+            {
+                "text": "bad",
+                "value": 0
+            }
+        ]
+    }
+]
