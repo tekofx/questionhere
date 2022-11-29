@@ -3,6 +3,8 @@ import Questions from "../data/questions.json";
 import { useState } from "react";
 import { Grid, Box, Button, Container, Typography } from "@mui/material";
 import { useRouter } from "next/router";
+import Answers from "../data/answers.json";
+
 interface Question {
   id: number;
   question: string;
@@ -13,15 +15,31 @@ export default function About() {
   const [question, setQuestion] = useState(Questions[0]);
   const [answers, setAnswers] = useState<Array<number>>([]);
 
+  function getResults() {
+    var selectedItem = "";
+    var selectedValue = 0;
+    for (const key in Answers) {
+      var temp = 0;
+      for (let index = 0; index < answers.length; index++) {
+        Answers[key][index] == answers[index] ? temp++ : temp;
+      }
+      if (temp > selectedValue) {
+        selectedValue = temp;
+        selectedItem = key;
+      }
+    }
+    return selectedItem;
+  }
+
   function nextQuestion() {
     const index = Questions.indexOf(question);
-    console.log(answers);
     if (index < Questions.length - 1) {
       setQuestion(Questions[index + 1]);
     } else {
+      var result = getResults();
       router.push({
         pathname: "/results",
-        query: { answers: answers },
+        query: { result: result },
       });
     }
   }
@@ -57,8 +75,9 @@ export default function About() {
             </Typography>
           </Grid>
           {question.answers.map((answer) => (
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <Button
+                sx={{ width: "100%" }}
                 variant="outlined"
                 color="primary"
                 onClick={function () {

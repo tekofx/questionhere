@@ -1,11 +1,17 @@
 import { Grid, Box, Button, Container, Typography } from "@mui/material";
 import { useRouter } from "next/router";
+import Answers from "../data/answers.json";
+import { useState } from "react";
 interface ResultsProps {
   answers: Array<number>;
 }
 
-export default function Results({ answers }: ResultsProps) {
+export default function Results() {
   const router = useRouter();
+  const [note, setNote] = useState(0);
+  const [group, setGroup] = useState("");
+  const result = router.query.result;
+
   return (
     <Container maxWidth="lg">
       <Box
@@ -24,11 +30,9 @@ export default function Results({ answers }: ResultsProps) {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            {router.query.answers.map((answer: number) => (
-              <Typography variant="h4" component="h1" gutterBottom>
-                {answer}
-              </Typography>
-            ))}
+            <Typography variant="h4" component="h1" gutterBottom>
+              You are {result}
+            </Typography>
           </Grid>
         </Grid>
       </Box>
