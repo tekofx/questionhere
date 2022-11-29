@@ -1,18 +1,17 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Questions from "../data/questions.json";
 import { useState } from 'react';
-import Question from '../components/Question';
+import { Grid, Box, Button, Container, Typography } from '@mui/material';
 
 export default function About() {
-  const [question, setQuestion] = useState(0);
+  const [question, setQuestion] = useState(Questions[0]);
 
 
   function nextQuestion() {
-    setQuestion(question + 1);
+    const index = Questions.indexOf(question);
+    if (index < Questions.length - 1) {
+      setQuestion(Questions[index + 1]);
+    }
   }
 
   return (
@@ -27,7 +26,21 @@ export default function About() {
         }}
       >
        
-        <Question question={Questions[question].question} answers={Questions[question].answers}/>
+       <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <Typography variant="h4" component="h1" gutterBottom>
+                    {question.question}
+                </Typography>
+            </Grid>
+            {question.answers.map((answer) => (
+            <Grid item xs={12}>
+                <Button variant="contained" color="primary">
+                    {answer.text}	
+                </Button>
+            </Grid>
+            ))}
+        </Grid>
+        <Button variant="contained" color="primary" onClick={nextQuestion}>next</Button>
       </Box>
     </Container>
   );

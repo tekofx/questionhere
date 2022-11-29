@@ -12,5 +12,19 @@
                 "value": 0
             }
         ]
+    },
+    {
+        "id": "2",
+        "question": "Whats your favorite color",
+        "answers": [
+            {
+                "text": "red",
+                "value": 1
+            },
+            {
+                "text": "blue",
+                "value": 0
+            }
+        ]
     }
 ]
