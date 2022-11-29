@@ -1,29 +1,55 @@
 [
     {
         "id": 1,
-        "question": "How are you feling today",
+        "question": "Whats your favorite color?",
         "answers": [
             {
-                "text": "good",
+                "text": "Red",
+                "value": 0
+            },
+            {
+                "text": "Blue",
                 "value": 1
             },
             {
-                "text": "bad",
-                "value": 0
+                "text": "Yellow",
+                "value": 2
             }
         ]
     },
     {
         "id": 2,
-        "question": "Whats your favorite color",
+        "question": "What element do you like the most?",
         "answers": [
             {
-                "text": "red",
+                "text": "Fire",
+                "value": 0
+            },
+            {
+                "text": "Electricity",
                 "value": 1
             },
             {
-                "text": "blue",
+                "text": "Normal",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What animal do you like the most?",
+        "answers": [
+            {
+                "text": "Mouse",
                 "value": 0
+            },
+            {
+                "text": "Dragon",
+                "value": 1
+            },
+            {
+                "text": "Monkey",
+                "value": 2
             }
         ]
     }
