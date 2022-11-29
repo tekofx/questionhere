@@ -1,17 +1,32 @@
-{
-    "Pikachu": [
-        2,
-        1,
-        0
-    ],
-    "Charizard": [
-        0,
-        0,
-        1
-    ],
-    "Snorlax": [
-        1,
-        2,
-        2
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "Pikachu",
+        "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+        "choices": [
+            2,
+            1,
+            0
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Charizard",
+        "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+        "choices": [
+            0,
+            0,
+            1
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Snorlax",
+        "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
+        "choices": [
+            1,
+            2,
+            2
+        ]
+    }
+]

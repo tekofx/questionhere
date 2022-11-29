@@ -10,7 +10,8 @@ export default function Results() {
   const router = useRouter();
   const [note, setNote] = useState(0);
   const [group, setGroup] = useState("");
-  const result = router.query.result;
+  const result = Answers[router.query.result];
+  console.log(result.img);
 
   return (
     <Container maxWidth="lg">
@@ -30,8 +31,12 @@ export default function Results() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
+            <img src={result.img} />
+          </Grid>
+
+          <Grid item xs={12}>
             <Typography variant="h4" component="h1" gutterBottom>
-              You are {result}
+              You are {result.name}
             </Typography>
           </Grid>
         </Grid>

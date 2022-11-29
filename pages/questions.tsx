@@ -1,15 +1,9 @@
-import * as React from "react";
 import Questions from "../data/questions.json";
 import { useState } from "react";
 import { Grid, Box, Button, Container, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import Answers from "../data/answers.json";
 
-interface Question {
-  id: number;
-  question: string;
-  answers: { text: string; value: number }[];
-}
 export default function About() {
   const router = useRouter();
   const [question, setQuestion] = useState(Questions[0]);
@@ -21,7 +15,7 @@ export default function About() {
     for (const key in Answers) {
       var temp = 0;
       for (let index = 0; index < answers.length; index++) {
-        Answers[key][index] == answers[index] ? temp++ : temp;
+        Answers[key]["choices"][index] == answers[index] ? temp++ : temp;
       }
       if (temp > selectedValue) {
         selectedValue = temp;
