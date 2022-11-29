@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import Link from "../src/Link";
+import config from "../data/config.json";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         <Typography variant="h4" component="h1" gutterBottom>
           Question Here!
         </Typography>
-        <Typography>This is a cuestionare about cats</Typography>
+        <Typography>{config.description}</Typography>
         <Box maxWidth="sm">
           <Button
             variant="contained"

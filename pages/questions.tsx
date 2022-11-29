@@ -43,6 +43,8 @@ export default function About() {
     if (index > 0) {
       setQuestion(Questions[index - 1]);
     }
+    // Remove last item added to answers
+    setAnswers(answers.slice(0, -1));
   }
 
   function addAnswer(value: number) {
